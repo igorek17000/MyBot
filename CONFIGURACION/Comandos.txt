@@ -1,0 +1,125 @@
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 20,
+            "sort_key": "quoteVolume",
+            "min_value": 0,
+            "refresh_period": 1800
+        }
+    ],
+
+    "pairlists": [
+        {"method": "VolumePairList"}
+    ],
+
+Ejecutar Estrategia
+freqtrade trade --strategy SampleStrategy
+freqtrade backtesting --strategy SampleStrategy -i 1h
+freqtrade backtesting --strategy SampleStrategy -i 1d --timerange 20210501-20210801
+freqtrade backtesting --strategy BBandsRSI -i 30m --timerange 20210701-20210901
+freqtrade backtesting --strategy BBandsRSI -i 30m --timerange 20210701-20210901 --export trades
+freqtrade plot-dataframe -p LUNA/USDT --strategy BBandsRSI -i 30m --timerange 20210701-20210901
+
+
+
+Descargar Data
+freqtrade download-data -t 1h
+freqtrade download-data --pairs ETH/BTC --days 5 -t 1h
+freqtrade download-data --pairs BAT/BTC --days 1 -t 5m
+freqtrade download-data --days 5 -t 1h
+freqtrade list-data
+freqtrade download-data --pairs LTC/BTC --timerange 20200101-20200201 -t 1d
+freqtrade download-data -t  1d --timerange 20200101-20210901
+freqtrade download-data -t  30m --timerange 20210701-20210901
+
+Plot Data Testing
+--para exportar las operaciones que se hicieron
+freqtrade backtesting --strategy SampleStrategy -i 1d --timerange 20210501-20210801 --export trades
+freqtrade plot-dataframe --strategy SampleStrategy -p DOGE/USDT -i 1d
+freqtrade plot-profit -i 1d
+freqtrade plot-profit -p DOGE/USDT -i 1d
+freqtrade plot-dataframe -p BTC/USDT --strategy BBandsRSI -i 1d --no-trades
+
+Nueva Estrategia
+freqtrade new-strategy --strategy BBandsRSI
+
+
+
+"BTC/USDT",
+            "ETH/USDT",
+            "DOGE/USDT",
+            "XRP/USDT",
+            "ADA/USDT",
+            "ETC/USDT",
+            "SOL/USDT",
+            "BCH/USDT",
+            "LTC/USDT",
+            "EOS/USDT",
+            "DOT/USDT",
+            "LINK/USDT",
+            "TRX/USDT",
+            "VET/USDT",
+            "LUNA/USDT",
+            "MATIC/USDT",
+            "XLM/USDT",
+            "FIL/USDT"
+
+            "BTC/USDT",
+            "ETH/USDT",
+            "BUSD/USDT",
+            "GMT/USDT",
+            "DOGE/USDT",
+            "SHIB/USDT",
+            "SOL/USDT",
+            "NEAR/USDT",
+            "ZIL/USDT",
+            "APE/USDT",
+            "LUNA/USDT",
+            "XRP/USDT",
+            "AVAX/USDT",
+            "WAVES/USDT",
+            "USDC/USDT",
+            "KNC/USDT",
+            "RUNE/USDT",
+            "UST/USDT",
+            "ADA/USDT",
+            "FTM/USDT"
+
+
+ & "C:/Program Files/Python310/python.exe" c:/BotPython/bot.py
+
+
+
+            "BTC/USDT",
+            "ETH/USDT",
+            "DOGE/USDT",
+            "SHIB/USDT",
+            "XRP/USDT"
+
+los mejores de bbandsRSI
+            "SHIB/USDT",	 #0.53
+            "XRP/USDT",	#0.34
+	"KNC/USDT",	#4.96
+"GMT/USDT", #8.63
+"AVAX/USDT", #2.40
+
+"",
+"",
+"",
+
+            "BTC/USDT",
+            "ETH/USDT",
+            "DOGE/USDT",
+            "SHIB/USDT",
+            "SOL/USDT",
+            "NEAR/USDT",
+            "ZIL/USDT",
+            "LUNA/USDT",
+            "AVAX/USDT",
+            "WAVES/USDT",
+            "RUNE/USDT",
+            "ADA/USDT",
+            "FTM/USDT"
+
+
+
