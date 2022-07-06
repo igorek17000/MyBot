@@ -1,0 +1,74 @@
+sudo apt-get update
+sudo apt install -y python3-pip python3-venv python3-dev python3-pandas git
+git clone https://github.com/freqtrade/freqtrade.git
+git clone https://github.com/hemirmg/MyBot.git
+cd freqtrade
+git checkout stable
+./setup.sh -i
+source .env/bin/activate
+freqtrade --help
+freqtrade create-userdir --userdir user_data
+freqtrade new-config --config config.json
+nano config.json
+freqtrade download-data --config config.json --days 9 -t 5m
+ls user_data/data/binance
+cambiar:
+        {
+            "method": "StaticPairList",
+        }
+### Instalar GUI ###
+freqtrade install-ui
+
+freqtrade backtesting --config config.json --strategy SampleStrategy
+freqtrade trade --config config.json --strategy SampleStrategy
+
+### Crear el Servicio ###
+sudo nano /etc/systemd/system/freqBot1.service
+
+### Pegar ###
+[Unit]
+Description=FreqBot1     
+[Service]
+WorkingDirectory=/home/hemir/freqtrade
+ExecStart=/home/hemir/freqtrade/.env/bin/freqtrade trade --config /home/hemir/freqtrade/config_1.json
+Restart=always
+RestartSec=10
+Type=notify
+NotifyAccess=all
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=FreqBot1
+User=root
+Group=root
+Environment=NODE_ENV=production
+[Install]
+WantedBy=multi-user.target
+### Final ###
+
+# Start the service:                
+sudo systemctl start freqBot1.service
+
+# Check the service status:        
+sudo systemctl status freqBot1.service
+
+# Stop the service:                
+sudo systemctl stop freqBot1.service
+
+# Enable the service at system startup (start at boot):
+sudo systemctl enable freqBot1.service
+
+# Disable the service at system startup (no start at boot):
+sudo systemctl disable freqBot1.service
+
+# After each service config change
+sudo systemctl daemon-reload
+
+# Show activity 
+sudo tail -f /var/log/syslog
+
+
+
+###Instalacion de GUI###
+cd freqtrade/
+source .env/bin/activate
+freqtrade install-ui
