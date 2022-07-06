@@ -1,0 +1,135 @@
+{
+    "max_open_trades": 5,
+    "stake_currency": "BTC",
+    "stake_amount": "unlimited",
+    "amend_last_stake_amount": true,
+    "tradable_balance_ratio": 0.98,
+    "fiat_display_currency": "USD",
+    "timeframe": "6h",
+    "dry_run": true,
+    "dry_run_wallet": 0.003,
+    "cancel_open_orders_on_exit": false,
+    "unfilledtimeout": {
+        "entry": 10,
+        "exit": 30,
+        "exit_timeout_count": 0,
+        "unit": "minutes"
+    },
+    "entry_pricing": {
+        "price_side": "same",
+        "use_order_book": false,
+        "order_book_top": 1,
+        "price_last_balance": 0.0,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "exit_pricing": {
+        "price_side": "same",
+        "use_order_book": false,
+        "order_book_top": 1
+    },
+    "order_types": {
+    	"entry": "limit",
+	"exit": "limit",
+    	"emergency_exit": "market",
+    	"force_entry": "market",
+    	"force_exit": "market",
+    	"stoploss": "market",
+    	"stoploss_on_exchange": false,
+    	"stoploss_on_exchange_interval": 60
+    },
+           
+    "exchange": {
+        "name": "binance",
+        "key": "vmyV9sLqsQFpx9sEkptWWOnfsMpxgkrB7FLoGIutERDe959PDsas1zsnFmQyVqtz",
+        "secret": "D6EOlZQk95dVRHtgKOMsnUgcvhoOOEAD25q8zVsAqNNIt8EHQmQ1X95B08W8KfbB",
+        "ccxt_config": {
+            "enableRatelimit": true
+        },
+        "ccxt_async_config": {
+            "enableRatelimit": true,
+            "rateLimit": 200
+        },
+        "pair_whitelist": [
+
+        ],
+        "pair_blacklist": [
+            "HIVE/BTC",
+            "STRAX/BTC",
+            "DOT/BTC",
+            "STX/BTC",
+            "EZ/BTC",
+            "LSK/BTC",
+            "QLC/BTC",
+            "PYR/BTC",
+            "XMR/BTC",
+            "UNI/BTC",
+            "APE/BTC",
+            "MANA/BTC",
+            "CHZ/BTC",
+            "WBTC/BTC"
+        ]
+    },
+    
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 20,
+            "sort_key": "quoteVolume",
+            "refresh_period": 1800
+        },
+        {"method": "AgeFilter", "min_days_listed": 10},
+        {
+          "method": "RangeStabilityFilter",
+          "lookback_days": 5,
+          "min_rate_of_change": 0.01,
+          "refresh_period": 1440
+        }
+       ],
+
+    "edge": {
+        "enabled": false,
+        "process_throttle_secs": 3600,
+        "calculate_since_number_of_days": 7,
+        "allowed_risk": 0.01,
+        "stoploss_range_min": -0.01,
+        "stoploss_range_max": -0.1,
+        "stoploss_range_step": -0.01,
+        "minimum_winrate": 0.60,
+        "minimum_expectancy": 0.20,
+        "min_trade_number": 10,
+        "max_trade_duration_minute": 1440,
+        "remove_pumps": false
+    },
+    "telegram": {
+        "enabled": false,
+        "token": "5317284831:AAFuBY8awKBZ4g36AKJqLlfcEV4PDiPhQS4",
+        "chat_id": "5115301231"
+    },
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "b0573e5ec8d07c288b482858afc97a6a5ace572415d8481edaa449b6d137465e",
+        "CORS_origins": ["http://localhost:8080"],
+        "username": "user",
+        "password": "pass"
+    },
+    "bot_name": "KeltnerRSI_BTC_6h",
+    "user_data_dir": "/home/hemir/freqtrade/user_data/",
+    "strategy_path": "/home/hemir/freqtrade/user_data/",
+    "strategy": "KeltnerRSI_BTC_6h",
+    "db_url": "sqlite:////home/hemir/freqtrade/user_data/tradesv3_1.sqlite",
+    "logfile": "syslog:/dev/log",
+    "initial_state": "running",
+    "force_entry_enable": false,
+    "internals": {
+            "process_throttle_secs": 5,
+            "heartbeat_interval": 45,
+            "sd_notify": true
+    }
+}
