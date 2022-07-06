@@ -1,0 +1,37 @@
+ 1) ABRIR UNA TERMINAL
+ 
+ 2) INICIAR SESIÓN COMO USUARIO ROOT
+     • sudo -i
+
+ 3) DESCARGAR EL CLIENTE:
+  ▪ cd /usr/local/src
+  ▪ wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz
+
+  ▪ tar xzf noip-duc-linux.tar.gz
+  ▪ cd no-ip-2.1.9
+
+
+ 4) INSTALAR EL CLIENTE
+  ▪ make
+  ▪ make install
+      ◦ correo
+      ◦ contraseña
+      ◦ Elegir host
+        
+   ◦  apt-get update
+   ◦  apt-get install make
+   ◦  apt-get install build-essential 
+
+ 5) EJECUTAR EL CLIENTE
+  ▪ /usr/local/bin/noip2
+
+noip2 -S
+
+
+ 6) EJECUTAR EL CLIENTE AUTOMATICAMENTE CUANDO EL EQUIPO SE ENCIENDA
+
+nano /usr/local/src/noip-2.1.9-1/README.FIRST
+
+
+CC1087127942
+Yemugikiki123@
